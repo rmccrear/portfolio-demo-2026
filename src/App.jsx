@@ -7,12 +7,11 @@ function Footer() {
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <p>Pokémon trainer from Pallet Town.</p>
       <Footer />
     </div>
-    
   )
 }
 
