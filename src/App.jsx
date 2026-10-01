@@ -1,5 +1,8 @@
-function Header() {
-  return <h1>Ash Ketchum</h1>
+import Header from "./Header"
+
+function Footer() {
+  let year = new Date().getFullYear()
+  return <p>&copy; {year} Ash Ketchum</p>
 }
 
 function App() {
@@ -7,7 +10,9 @@ function App() {
     <div>
       <Header />
       <p>Pokémon trainer from Pallet Town.</p>
+      <Footer />
     </div>
+    
   )
 }
 
