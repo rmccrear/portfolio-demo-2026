@@ -1,9 +1,6 @@
 import Header from "./Header"
+import Footer from "./Footer"
 
-function Footer() {
-  let year = new Date().getFullYear()
-  return <p>&copy; {year} Ash Ketchum</p>
-}
 
 function App() {
   return (
