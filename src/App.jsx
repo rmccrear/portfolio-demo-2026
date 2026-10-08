@@ -1,6 +1,7 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Hero from "./Hero"
+import QuizCard from "./QuizCard"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Hero />
       <p>Pokémon trainer from Pallet Town.</p>
+      <QuizCard/>
       <Footer />
     </div>
   )
