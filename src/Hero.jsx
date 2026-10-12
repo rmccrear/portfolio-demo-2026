@@ -2,10 +2,10 @@ import { useState } from "react"
 import imageUrl from "./image-url"
 import "./Hero.css"
 
-const imageIds = [
-  "photo-1629385701021-fcd568a743e8",
-  "photo-1567206563064-6f60f40a2b57",
-  "photo-1501443762994-82bd5dace89a"
+const imageObjects = [
+  {id: "photo-1629385701021-fcd568a743e8", description: "5 ice cream cones"},
+  {id: "photo-1501443762994-82bd5dace89a", description: "8 cones"},
+  {id: "photo-1567206563064-6f60f40a2b57", description: "9 flavors"},
 ]
 
 function Hero() {
@@ -17,8 +17,14 @@ function Hero() {
   const [index, setIndex] = useState(0)
   // let saturation = 100
   const [saturation, setSaturation] = useState(0)
+
+  //const imageObject = imageObjects[index]
+  //const imageId = imageObject.id
+  //const imageDescription = imageObject.description
+  const {id, description} = imageObjects[index]
+
+  const iceCreamImageUrl = imageUrl(id, width, height, sepia, saturation)
   
-  const iceCreamImageUrl = imageUrl(imageIds[index], width, height, sepia, saturation)
 
   const makeBW = () => {
     // saturation = -100 // Level 2 way.
@@ -39,7 +45,7 @@ function Hero() {
 
   const goForward = () => {
     // index = index + 1
-    if(index<imageIds.length-1) {
+    if(index<imageObjects.length-1) {
       setIndex(index+1)
     } else {
       setIndex(0)
@@ -50,6 +56,7 @@ function Hero() {
     <div>
       <div className="hero">
         <img src={iceCreamImageUrl} alt="ice cream" />
+        <p>{description}</p>
       </div>
 
       <button onClick={goBack}>Prev</button> &nbsp;
